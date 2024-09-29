@@ -17,16 +17,17 @@ This project implements a general framework for multi-class image classification
 
 ## Dataset Structure
 
-dataset/
-├── train/
-│   ├── class_01/
-│   ├── class_02/
-│   └── class_03/
-├── valid/
-│   ├── class_01/
-│   ├── class_02/
-│   └── class_03/
-└── test/
-    ├── class_01/
-    ├── class_02/
-    └── class_03/
+dataset/ \
+├── train/ \
+│   ├── class_01/ \
+│   ├── class_02/ \
+│   └── class_03/ \
+├── valid/ \
+│   ├── class_01/ \
+│   ├── class_02/ \
+│   └── class_03/ \
+└── test/ \
+    ├── class_01/ \
+    ├── class_02/ \
+    └── class_03/ \
+
