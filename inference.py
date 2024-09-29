@@ -80,6 +80,9 @@ def predict_with_threshold(model, image_path, preprocess, class_names, threshold
 
 
 if __name__ == "__main__":
+    # path to test data
+    image_path = "./dataset/test"
+
     # Inference
     class_names = ['class_01', 'class_02', 'class_03']  # classes name
     threshold = 0.8
@@ -96,7 +99,5 @@ if __name__ == "__main__":
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
-
-    image_path = "path/to/test/data"
 
     predict_with_threshold(model, image_path, preprocess, class_names, threshold)
