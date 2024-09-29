@@ -49,7 +49,7 @@ def predict_with_threshold(model, image_path, preprocess, class_names, threshold
             image = Image.open(os.path.join(image_path, file)).convert('RGB')
             count += 1
 
-            image = preprocess(image).unsqueeze(0)  # Thêm batch dimension
+            image = preprocess(image).unsqueeze(0)
 
             # Predictions
             with torch.no_grad():
@@ -67,13 +67,13 @@ def predict_with_threshold(model, image_path, preprocess, class_names, threshold
 
                 predicted_class = class_names[predicted.item()]
                 print("predicted:", predicted_class)
-                class_counts[predicted_class] += 1  # Tăng bộ đếm cho class dự đoán
+                class_counts[predicted_class] += 1
 
-    # Tính thời gian trung bình cho mỗi dự đoán
+    # Calculate the average time for each prediction
     avg_time = (time.time() - start_time) / count
     print("Avg time per image:", avg_time)
 
-    # In kết quả phân loại
+    # Print classification results for all classes
     print("\nClassification Results:")
     for class_name, class_count in class_counts.items():
         print(f"{class_name}: {class_count}")
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     # model = load_model_v2('./mobilenetv2_3_classes.pth', num_classes=len(class_names))
 
     # Load MobileNetV3
-    model = load_model_v3("mobilenetv3_Large_add_Grayscale.pth", num_classes=len(class_names))
+    model = load_model_v3("mobilenetv3_Large.pth", num_classes=len(class_names))
 
     # Define transformation for input image
     preprocess = transforms.Compose([
